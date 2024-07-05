@@ -29,8 +29,9 @@ ENV BUILD_ENV ${BUILD_ENVIRONMENT}
 
 WORKDIR ${APP_HOME}
 
-RUN apt-get update && apt-get install -no-install-recommends -y \
-    sudo git bash-completion nano ssh
+RUN apt-get update && apt-get install --no-install-recommends -y \
+  sudo git bash-completion nano ssh
+
 
 RUN addgroup --system django && \
     adduser --system --ingroup django django && \
@@ -39,11 +40,10 @@ RUN addgroup --system django && \
     chmod 775 ${APP_HOME}/staticfiles
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
-    libpq-dev \
-    gettext \
-    && apt-get purge -y --auto-remove -o
-    APT::AutoRemove::RecommendsImportant=false \
-    && rm -rf /var/lib/apt/lists/*
+  libpq-dev \
+  gettext \
+  && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
+  && rm -rf /var/lib/apt/lists/*
 
 COPY --from=python-build-stage /usr/src/app/wheels /wheels/
 
@@ -58,7 +58,7 @@ COPY --chown=django:django ./docker/local/django/start.sh /start
 RUN sed -i 's/\r$//g' /start
 RUN chmod +x /start
 
-COPY --chown:django:django . ${APP_HOME}
+COPY --chown=django:django . ${APP_HOME}
 
 RUN chown django:django ${APP_HOME}
 
