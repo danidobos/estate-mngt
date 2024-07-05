@@ -157,3 +157,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 TAGGIT_CASE_INSENSITIVE = True
+
+AUTH_USER_MODEL = 'users.User'
