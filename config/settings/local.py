@@ -19,6 +19,8 @@ SECRET_KEY = getenv(
     'DJANGO_SECRET_KEY', 'xZCCtqN0jkDF1v7Bjzxl61CGPcA54dDF0dHlFXe0t8QLnyb6RZ8'
 )
 
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8080']
+
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
 
 ADMIN_URL = getenv('DJANGO_ADMIN_URL')
