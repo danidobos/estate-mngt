@@ -20,7 +20,7 @@ def set_auth_cookies(
         'path': settings.COOKIE_PATH,
         'secure': settings.COOKIE_SECURE,
         'httponly': settings.COOKIE_HTTPONLY,
-        'samesite': settings.SAMESITE,
+        'samesite': settings.COOKIE_SAMESITE,
         'max_age': access_token_lifetime,
     }
     response.set_cookie('access', access_token, **cookie_settings)
