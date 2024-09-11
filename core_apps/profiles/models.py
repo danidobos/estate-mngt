@@ -51,7 +51,7 @@ class Profile(TimeStampedModel):
     )
     country_of_origin = CountryField(verbose_name=_('Country'), default='HU')
     city_of_origin = models.CharField(
-        verbose_name=_('Ciry'), max_length=180, default='Békéscsaba'
+        verbose_name=_('City'), max_length=180, default='Békéscsaba'
     )
     report_count = models.IntegerField(verbose_name=_('Report Count'), default=0)
     reputation = models.IntegerField(verbose_name=_('Reputation'), default=100)

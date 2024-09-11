@@ -30,7 +30,7 @@ class StandardResultSetPagination(PageNumberPagination):
 class ProfileListAPIView(generics.ListAPIView):
     serializer_class = ProfileSerializer
     renderer_classes = [GenericJSONRenderer]
-    pagination_class = [StandardResultSetPagination]
+    pagination_class = StandardResultSetPagination
     object_label = 'profiles'
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
     search_fields = ['user__username', 'user__first_name', 'user__last_name']
