@@ -1,5 +1,4 @@
 import logging
-from typing import Any
 
 from django.contrib.auth import get_user_model
 from django.db import models
@@ -84,7 +83,7 @@ class Issue(TimeStampedModel):
         ):
             self.notify_assigned_user()
 
-    def notify_assigned_to(self) -> None:
+    def notify_assigned_user(self) -> None:
         try:
             subject = f'New Issue Assigned: {self.title}'
             from_email = DEFAULT_FROM_EMAIL

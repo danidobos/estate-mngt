@@ -22,7 +22,7 @@ def send_issue_confirmation_email(issue: Issue) -> None:
         email = EmailMultiAlternatives(subject, text_email, from_email, to)
 
         email.attach_alternative(html_email, 'text/html')
-        email.send
+        email.send()
 
     except Exception as e:
         logger.error(
@@ -44,7 +44,7 @@ def send_issue_resolved_email(issue: Issue) -> None:
         email = EmailMultiAlternatives(subject, text_email, from_email, to)
 
         email.attach_alternative(html_email, 'text/html')
-        email.send
+        email.send()
 
     except Exception as e:
         logger.error(
@@ -66,7 +66,7 @@ def send_issue_resolution_email(issue: Issue) -> None:
         email = EmailMultiAlternatives(subject, text_email, from_email, recipient_list)
 
         email.attach_alternative(html_email, 'text/html')
-        email.send
+        email.send()
 
     except Exception as e:
         logger.error(
