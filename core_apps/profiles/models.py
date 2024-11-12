@@ -26,6 +26,7 @@ class Profile(TimeStampedModel):
         Mason = ('mason', _('Mason'))
         Carpenter = ('carpenter', _('Carpenter'))
         Plumber = ('plumber', _('Plumber'))
+        Roofer = ('roofer', _('Roofer'))
         Painter = ('painter', _('Painter'))
         Electrician = ('electrician', _('Electrician'))
         HVAC = ('hvac', _('HVAC'))
