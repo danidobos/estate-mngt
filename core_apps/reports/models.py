@@ -20,7 +20,7 @@ class Report(TimeStampedModel):
     )
     reported_user = models.ForeignKey(
         User,
-        related_name='reports_recieved',
+        related_name='reports_received',
         on_delete=models.CASCADE,
         verbose_name=_('Reported user'),
     )

@@ -20,11 +20,11 @@ class RatingCreateAPIView(generics.CreateAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
-        rated_user__username = serializer.validated_data.get('rated_user__username')
+        rated_user_username = serializer.validated_data.get('rated_user_username')
         try:
-            rated_user = User.objects.get(username=rated_user__username)
+            rated_user = User.objects.get(username=rated_user_username)
         except User.DoesNotExist:
-            raise NotFound(f'User with username "{username}" does not exist.')
+            raise NotFound(f'User with username: {rated_user_username} does not exist.')
         rating_user = request.user
 
         if rating_user == rated_user:
