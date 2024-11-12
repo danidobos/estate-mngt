@@ -7,7 +7,7 @@ User = get_user_model()
 
 
 class ReportSerializer(serializers.ModelSerializer):
-    reported_user_username = serializers.ChoiceField(write_only=True)
+    reported_user_username = serializers.CharField(write_only=True)
 
     class Meta:
         model = Report
