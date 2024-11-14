@@ -83,6 +83,11 @@ class UpvotePostSerializer(serializers.ModelSerializer):
             instance.upvotes += 1
             instance.save()
 
+        if user in instance.downvoted_by.all():
+            instance.downvoted_by.remove(user)
+            instance.downvotes -= 1
+            instance.save()
+
         return instance
 
 
