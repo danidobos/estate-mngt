@@ -16,6 +16,10 @@ const config: Config = {
 			},
 			borderRadius: {},
 			colors: {},
+			fontFamily: {
+				openSans: ["var(--font-openSans)"],
+				robotoSlab: ["var(--font-robotoSlab)"],
+			},
 		},
 	},
 	plugins: [require("tailwindcss-animate")],
