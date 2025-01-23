@@ -1,6 +1,6 @@
-FROM docker.io/node:20.11-alpine3.18 as base
+FROM docker.io/node:20.11-alpine3.18 AS base
 
-FROM base as node-build-stage
+FROM base AS node-build-stage
 
 RUN apk add --no-cache libc6-compat
 
@@ -28,4 +28,4 @@ RUN chown -R nextjs:nodejs ${APP_HOME}
 
 USER nextjs
 
-cmd [ "npm", "run", "dev" ]
+CMD [ "npm", "run", "dev" ]
