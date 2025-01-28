@@ -8,10 +8,6 @@ from dotenv import load_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 
-print("---------------------")
-print(BASE_DIR)
-print("---------------------")
-
 APPS_DIR = BASE_DIR / 'core_apps'
 
 local_env_file = path.join(BASE_DIR, '.envs', '.env.local')
