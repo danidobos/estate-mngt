@@ -28,7 +28,7 @@ export function useAuthNavigation() {
 		if (
 			link.path === "/profile" ||
 			link.path === "/tenants" ||
-			link.path === "/bookmarks" ||
+			link.path === "/bookmark" ||
 			link.path === "/report-issue" ||
 			link.path === "/report-tenant" ||
 			link.path === "/technicians" ||
